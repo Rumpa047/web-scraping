@@ -15,14 +15,14 @@ for letter in alphabt_link:
     letter = letter_link_soup.find("div", id="cat_page").find("ul").find_all('a')
     for i in letter:
         print(i.text)
-        # letter_meaning_link = i.get('href')
-        # letter_meaning_link_req = requests.get(letter_meaning_link)
-        # letter_meaning_soup = BeautifulSoup(letter_meaning_link_req.content, "lxml")
-        # try:
-        #     letter_meaning = letter_meaning_soup.find("div", id="w_info").find("span", class_="format1").text
-        #     print(letter_meaning)
-        # except:
-        #     print("Not a valid word")
+        letter_meaning_link = i.get('href')
+        letter_meaning_link_req = requests.get(letter_meaning_link)
+        letter_meaning_soup = BeautifulSoup(letter_meaning_link_req.content, "lxml")
+        try:
+            letter_meaning = letter_meaning_soup.find("div", id="w_info").find("span", class_="format1").text
+            print(letter_meaning)
+        except:
+            print("Not a valid word")
     try:
         next_page_link = letter_link_soup.find("div", class_="pagination").find('a')
     except:
@@ -38,19 +38,22 @@ for letter in alphabt_link:
             letter = next_page_soup.find("div", id="cat_page").find("ul").find_all('a')
             for i in letter:
                 print(i.text)
-                # letter_meaning_link = i.get('href')
-                # try:
-                #     letter_meaning_link_req = requests.get(letter_meaning_link)
-                #     if letter_meaning_link_req.status_code == 200:
-                #         letter_meaning_soup = BeautifulSoup(letter_meaning_link_req.content, "lxml")
-                #
-                # except:
-                #     time.sleep(3)
-                # try:
-                #     letter_meaning = letter_meaning_soup.find("div", id="w_info").find("span", class_="format1").text
-                #     print(letter_meaning)
-                # except:
-                #     print("Not a valid word")
+                letter_meaning_link = i.get('href')
+                try:
+                    letter_meaning_link_req = requests.get(letter_meaning_link)
+                    letter_meaning_soup = BeautifulSoup(letter_meaning_link_req.content, "lxml")
+
+
+                except:
+                    time.sleep(3)
+                    letter_meaning_link_req = requests.get(letter_meaning_link)
+                    letter_meaning_soup = BeautifulSoup(letter_meaning_link_req.content, "lxml")
+
+                try:
+                    letter_meaning = letter_meaning_soup.find("div", id="w_info").find("span", class_="format1").text
+                    print(letter_meaning)
+                except:
+                    print("Not a valid word")
 
             try:
                 pagination_links = next_page_soup.find("div", class_="pagination").find_all('a')
