@@ -22,7 +22,12 @@ for letter in alphabt_link:
             letter_meaning = letter_meaning_soup.find("div", id="w_info").find("span", class_="format1").text
             print(letter_meaning)
         except:
-            print("Not a valid word")
+            try:
+                letter_meaning = letter_meaning_soup.find("div", id="w_info").find("span", class_="meaning").text
+                print(letter_meaning)
+            except:
+
+                print("Not a valid word")
     try:
         next_page_link = letter_link_soup.find("div", class_="pagination").find('a')
     except:
@@ -53,7 +58,14 @@ for letter in alphabt_link:
                     letter_meaning = letter_meaning_soup.find("div", id="w_info").find("span", class_="format1").text
                     print(letter_meaning)
                 except:
-                    print("Not a valid word")
+                    try:
+                        letter_meaning = letter_meaning_soup.find("div", id="w_info").find("span",
+                                                                                           class_="meaning").text
+                        print(letter_meaning)
+                    except:
+
+                        print("Not a valid word")
+
 
             try:
                 pagination_links = next_page_soup.find("div", class_="pagination").find_all('a')
