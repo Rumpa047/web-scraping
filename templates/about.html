@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4 gap">
+  <a class="navbar-brand" href="/">BanglaDict</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/About">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+<!--<script>-->
+<!--$(document).ready(function(){-->
+ <!--$.ajaxSetup({ cache: false });-->
+ <!--$('#search').keyup(function(){-->
+  <!--$('#result').html('');-->
+  <!--$('#state').val('');-->
+  <!--var searchField = $('#search').val();-->
+  <!--var expression = new RegExp(searchField, "i");-->
+  <!--$.getJSON('dt', function(data) {-->
+   <!--$.each(data, function(key, value){-->
+    <!--if (value.name.search(expression) != -1 || value.location.search(expression) != -1)-->
+    <!--{-->
+     <!--$('#result').append('<li class="list-group-item link-class"><img src="'+value.image+'" height="40" width="40" class="img-thumbnail" /> '+value.name+' | <span class="text-muted">'+value.location+'</span></li>');-->
+    <!--}-->
+   <!--});-->
+  <!--});-->
+ <!--});-->
+
+ <!--$('#result').on('click', 'li', function() {-->
+  <!--var click_text = $(this).text().split('|');-->
+  <!--$('#search').val($.trim(click_text[0]));-->
+  <!--$("#result").html('');-->
+ <!--});-->
+<!--});-->
+<!--</script>-->
